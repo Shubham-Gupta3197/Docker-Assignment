@@ -22,27 +22,27 @@ services:
     depends_on:
       - zookeeper
 
-  producer:
-    container_name: producer
-    networks:
-      - pipes
-    build: 
-      context: .
-      dockerfile: producer/Dockerfile
-    depends_on:
-      - zookeeper
-      - server
+#   producer:
+#     container_name: producer
+#     networks:
+#       - pipes
+#     build: 
+#       context: .
+#       dockerfile: producer/Dockerfile
+#     depends_on:
+#       - zookeeper
+#       - server
 
-  consumer:
-    container_name: consumer
-    build: 
-      context: .
-      dockerfile: consumer/Dockerfile
-    depends_on:
-      - zookeeper
-      - server
-    networks:
-      - pipes
+#   consumer:
+#     container_name: consumer
+#     build: 
+#       context: .
+#       dockerfile: consumer/Dockerfile
+#     depends_on:
+#       - zookeeper
+#       - server
+#     networks:
+#       - pipes
 
 
 networks:
